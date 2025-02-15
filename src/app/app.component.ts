@@ -8,8 +8,10 @@ import { InputTextModule } from 'primeng/inputtext';
   selector: 'app-root',
   imports: [RouterOutlet, ButtonModule, FloatLabelModule, InputTextModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'instacook-front';
+
+  constructor() {}
 }

@@ -9,17 +9,23 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import CustomPrimeTheme from './theme';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
+    provideHttpClient(),
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
         preset: CustomPrimeTheme,
         options: {
+          cssLayer: {
+            name: 'primevue',
+            order: 'base, primevue',
+          },
           darkModeSelector: '.my-app-dark',
         },
       },

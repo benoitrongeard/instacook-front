@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@plugin "tailwindcss-primeui";
+
+html {
+  font-size: 14px;
+}
+
+:root {
+  /* Customise prime variable */
+  --p-floatlabel-active-font-size: 1rem;
+}
