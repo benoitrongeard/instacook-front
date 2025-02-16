@@ -15,6 +15,11 @@
     "confirmPassword": "Confirm password",
     "continue": "Or continue with",
     "alreadyRegistered": "Already registered?",
-    "login": "Login here"
+    "login": "Login here",
+    "error": {
+      "email": "Invalid email",
+      "emailRequired": "Email required",
+      "passwordRequired": "Password required"
+    }
   }
 }

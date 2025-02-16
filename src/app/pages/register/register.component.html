@@ -9,18 +9,33 @@
         </h2>
       </div>
 
-      <form class="space-y-6" action="#" method="POST">
+      <form
+        [formGroup]="registerForm"
+        (ngSubmit)="register()"
+        class="space-y-6"
+      >
         <div>
           <p-floatlabel>
             <input
               id="email"
               pInputText
               type="email"
-              name="email"
+              formControlName="email"
               class="w-full hover:border-primary"
             />
             <label for="email"> {{ "register.email" | translate }} </label>
           </p-floatlabel>
+          @if (registerForm.get('email')?.dirty &&
+          registerForm.get('email')?.errors?.['required']) {
+          <p-message severity="error" variant="simple" size="small">
+            {{ "register.error.emailRequired" | translate }}
+          </p-message>
+          } @else if (registerForm.get('email')?.dirty &&
+          registerForm.get('email')?.errors?.['email']) {
+          <p-message severity="error" variant="simple" size="small">
+            {{ "register.error.email" | translate }}
+          </p-message>
+          }
         </div>
 
         <div>
@@ -29,13 +44,19 @@
               id="password"
               pInputText
               type="password"
-              name="password"
+              formControlName="password"
               class="w-full hover:border-primary"
             />
             <label for="password">
               {{ "register.password" | translate }}
             </label>
           </p-floatlabel>
+          @if (registerForm.get('password')?.dirty &&
+          registerForm.get('password')?.errors?.['required']) {
+          <p-message severity="error" variant="simple" size="small">
+            {{ "register.error.passwordRequired" | translate }}
+          </p-message>
+          }
         </div>
 
         <div>
@@ -44,17 +65,28 @@
               id="password-confirm"
               pInputText
               type="password"
-              name="password-confirm"
-              class="w-full hover:border-primary"
+              formControlName="confirmPassword"
+              class="w-full"
             />
             <label for="password">
               {{ "register.confirmPassword" | translate }}
             </label>
           </p-floatlabel>
+          @if (registerForm.get('confirmPassword')?.dirty &&
+          registerForm.get('confirmPassword')?.errors?.['required']) {
+          <p-message severity="error" variant="simple" size="small">
+            {{ "register.error.passwordRequired" | translate }}
+          </p-message>
+          }
         </div>
 
         <div>
-          <p-button label="{{ 'register.title' | translate }}" fluid="true" />
+          <p-button
+            label="{{ 'register.title' | translate }}"
+            fluid="true"
+            type="submit"
+            [disabled]="!registerForm.valid"
+          />
         </div>
       </form>
 

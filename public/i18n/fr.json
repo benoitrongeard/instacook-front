@@ -15,6 +15,11 @@
     "confirmPassword": "Confirmer le mot de passe",
     "continue": "Ou continue avec",
     "alreadyRegistered": "Déjà inscrit ?",
-    "login": "Connecte toi ici"
+    "login": "Connecte toi ici",
+    "error": {
+      "email": "Email invalide",
+      "emailRequired": "Email obligatoire",
+      "passwordRequired": "Mot de passe obligatoire"
+    }
   }
 }
