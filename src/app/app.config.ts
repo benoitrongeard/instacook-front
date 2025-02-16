@@ -10,7 +10,7 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import CustomPrimeTheme from './theme';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (
   http: HttpClient
@@ -21,7 +21,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {

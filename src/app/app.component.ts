@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -10,11 +11,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   translateService = inject(TranslateService);
+  platform = inject(PLATFORM_ID);
 
   constructor() {
-    // With server side, language is xx-XX format, but with client side, it's xx format
-    this.translateService.setDefaultLang(
-      navigator.language?.substring(0, 2) ?? 'en'
-    );
+    if (isPlatformBrowser(this.platform)) {
+      this.translateService.setDefaultLang(
+        navigator?.language?.substring(0, 2) ?? 'en'
+      );
+    }
   }
 }
