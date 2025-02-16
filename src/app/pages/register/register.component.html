@@ -1,1 +1,88 @@
-<p>register works!</p>
+<div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
+    <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
+      <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2
+          class="mb-10 text-center text-2xl/9 font-bold tracking-tight text-primary"
+        >
+          Register
+        </h2>
+      </div>
+
+      <form class="space-y-6" action="#" method="POST">
+        <div>
+          <p-floatlabel>
+            <input
+              id="email"
+              pInputText
+              type="email"
+              name="email"
+              class="w-full hover:border-primary"
+            />
+            <label for="email">Email</label>
+          </p-floatlabel>
+        </div>
+
+        <div>
+          <p-floatlabel>
+            <input
+              id="password"
+              pInputText
+              type="password"
+              name="password"
+              class="w-full hover:border-primary"
+            />
+            <label for="password">Password</label>
+          </p-floatlabel>
+        </div>
+
+        <div>
+          <p-floatlabel>
+            <input
+              id="password-confirm"
+              pInputText
+              type="password"
+              name="password-confirm"
+              class="w-full hover:border-primary"
+            />
+            <label for="password">Confirm Password</label>
+          </p-floatlabel>
+        </div>
+
+        <div>
+          <p-button label="Register" fluid="true" />
+        </div>
+      </form>
+
+      <div>
+        <div class="relative mt-10">
+          <div class="absolute inset-0 flex items-center" aria-hidden="true">
+            <div class="w-full border-t border-gray-200"></div>
+          </div>
+          <div class="relative flex justify-center text-sm/6 font-medium">
+            <span class="bg-white px-6 text-gray-900">Or continue with</span>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <p-button label="Primary" variant="outlined" fluid="true">
+            <ng-template #content>
+              <img src="instagram.svg" alt="Instagram" class="w-10 h-10" />
+              <span class="text-sm/6 font-semibold">Instagram</span>
+            </ng-template>
+          </p-button>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-10 text-center text-lg text-zinc-600 font-semibold">
+      Already a member ?
+      <a
+        [routerLink]="['/register']"
+        class="font-semibold text-primary hover:text-primary-emphasis hover:underline cursor-pointer"
+      >
+        Login now
+      </a>
+    </p>
+  </div>
+</div>
