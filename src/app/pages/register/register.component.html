@@ -5,7 +5,7 @@
         <h2
           class="mb-10 text-center text-2xl/9 font-bold tracking-tight text-primary"
         >
-          Register
+          {{ "register.title" | translate }}
         </h2>
       </div>
 
@@ -19,7 +19,7 @@
               name="email"
               class="w-full hover:border-primary"
             />
-            <label for="email">Email</label>
+            <label for="email"> {{ "register.email" | translate }} </label>
           </p-floatlabel>
         </div>
 
@@ -32,7 +32,9 @@
               name="password"
               class="w-full hover:border-primary"
             />
-            <label for="password">Password</label>
+            <label for="password">
+              {{ "register.password" | translate }}
+            </label>
           </p-floatlabel>
         </div>
 
@@ -45,12 +47,14 @@
               name="password-confirm"
               class="w-full hover:border-primary"
             />
-            <label for="password">Confirm Password</label>
+            <label for="password">
+              {{ "register.confirmPassword" | translate }}
+            </label>
           </p-floatlabel>
         </div>
 
         <div>
-          <p-button label="Register" fluid="true" />
+          <p-button label="{{ 'register.title' | translate }}" fluid="true" />
         </div>
       </form>
 
@@ -60,7 +64,9 @@
             <div class="w-full border-t border-gray-200"></div>
           </div>
           <div class="relative flex justify-center text-sm/6 font-medium">
-            <span class="bg-white px-6 text-gray-900">Or continue with</span>
+            <span class="bg-white px-6 text-gray-900">{{
+              "register.continue" | translate
+            }}</span>
           </div>
         </div>
 
@@ -76,12 +82,12 @@
     </div>
 
     <p class="mt-10 text-center text-lg text-zinc-600 font-semibold">
-      Already a member ?
+      {{ "register.alreadyRegistered" | translate }}
       <a
-        [routerLink]="['/register']"
+        [routerLink]="['/login']"
         class="font-semibold text-primary hover:text-primary-emphasis hover:underline cursor-pointer"
       >
-        Login now
+        {{ "register.login" | translate }}
       </a>
     </p>
   </div>

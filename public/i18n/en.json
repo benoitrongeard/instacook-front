@@ -1,0 +1,20 @@
+{
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password",
+    "continue": "Or continue with",
+    "notRegistered": "Not registered yet?",
+    "register": "Register here"
+  },
+  "register": {
+    "title": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "continue": "Or continue with",
+    "alreadyRegistered": "Already registered?",
+    "login": "Login here"
+  }
+}

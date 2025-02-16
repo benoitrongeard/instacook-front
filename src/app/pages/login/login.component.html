@@ -5,7 +5,7 @@
         <h2
           class="mb-10 text-center text-2xl/9 font-bold tracking-tight text-primary"
         >
-          Sign in
+          {{ "login.title" | translate }}
         </h2>
       </div>
 
@@ -19,7 +19,7 @@
               name="email"
               class="w-full hover:border-primary"
             />
-            <label for="email">Email</label>
+            <label for="email">{{ "login.email" | translate }}</label>
           </p-floatlabel>
         </div>
 
@@ -32,7 +32,7 @@
               name="password"
               class="w-full hover:border-primary"
             />
-            <label for="password">Password</label>
+            <label for="password">{{ "login.password" | translate }}</label>
           </p-floatlabel>
         </div>
 
@@ -41,13 +41,13 @@
             <a
               class="font-semibold text-primary hover:text-primary-emphasis cursor-pointer hover:underline"
             >
-              Forgot password ?
+              {{ "login.forgotPassword" | translate }}
             </a>
           </div>
         </div>
 
         <div>
-          <p-button label="Sign in" fluid="true" />
+          <p-button label="{{ 'login.title' | translate }}" fluid="true" />
         </div>
       </form>
 
@@ -57,7 +57,9 @@
             <div class="w-full border-t border-gray-200"></div>
           </div>
           <div class="relative flex justify-center text-sm/6 font-medium">
-            <span class="bg-white px-6 text-gray-900">Or continue with</span>
+            <span class="bg-white px-6 text-gray-900">{{
+              "login.continue" | translate
+            }}</span>
           </div>
         </div>
 
@@ -73,12 +75,12 @@
     </div>
 
     <p class="mt-10 text-center text-lg text-zinc-600 font-semibold">
-      Not a member ?
+      {{ "login.notRegistered" | translate }}
       <a
         [routerLink]="['/register']"
         class="font-semibold text-primary hover:text-primary-emphasis hover:underline cursor-pointer"
       >
-        Register now
+        {{ "login.register" | translate }}
       </a>
     </p>
   </div>
