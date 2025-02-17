@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -31,8 +32,6 @@ export class RegisterComponent {
   });
 
   register() {
-    this.registerForm.markAsDirty();
-    console.log('Register button clicked');
-    console.log(this.registerForm);
+    console.log(environment.apiUrl);
   }
 }
